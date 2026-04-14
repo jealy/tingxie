@@ -1,0 +1,146 @@
+.setup-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  border: none;
+  border-radius: 32rpx;
+  background: #ffffff;
+  padding: 28rpx;
+  box-shadow: 0 8rpx 28rpx rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.setup-card::after {
+  border: none;
+}
+
+.setup-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+}
+
+.setup-glow-primary {
+  background: linear-gradient(90deg, rgba(255, 140, 105, 0.08), rgba(255, 140, 105, 0));
+}
+
+.setup-icon {
+  position: relative;
+  z-index: 1;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 46rpx;
+  font-weight: 700;
+}
+
+.setup-icon-primary {
+  background: linear-gradient(135deg, #ff8c69, #ffb299);
+  box-shadow: 0 12rpx 28rpx rgba(255, 140, 105, 0.28);
+}
+
+.setup-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.setup-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.setup-tag {
+  padding: 4rpx 12rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 140, 105, 0.12);
+  color: #ff8c69;
+  font-size: 20rpx;
+  font-weight: 700;
+}
+
+.setup-arrow {
+  position: relative;
+  z-index: 1;
+  color: #ff8c69;
+  font-size: 40rpx;
+}
+
+.picker-label {
+  margin-bottom: 12rpx;
+  color: #8e8e93;
+  font-size: 24rpx;
+}
+
+.picker-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24rpx;
+  background: #fafafa;
+  padding: 24rpx;
+}
+
+.picker-value {
+  color: #2d2d2d;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.picker-arrow {
+  color: #c7c7cc;
+  font-size: 24rpx;
+}
+
+.hint-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+  border-radius: 32rpx;
+  background: linear-gradient(90deg, rgba(255, 140, 105, 0.08), rgba(255, 140, 105, 0.03));
+  padding: 24rpx;
+}
+
+.hint-icon {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: rgba(255, 140, 105, 0.12);
+  color: #ff8c69;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.hint-main {
+  flex: 1;
+}
+
+.hint-title {
+  color: #2d2d2d;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.bottom-action {
+  position: fixed;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: 32rpx;
+}
+
+.bottom-primary {
+  width: 100%;
+  border-radius: 32rpx;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+}

@@ -1,0 +1,61 @@
+﻿<view class="page-shell stack with-bottom-space">
+  <view class="soft-top">
+    <view class="row-between">
+      <view>
+        <view class="section-title">宁听</view>
+        <view class="section-subtitle">{{greeting}}，今天也来练一练听写。</view>
+      </view>
+      <view class="hero-avatar-wrap">
+        <view class="hero-avatar">宁</view>
+        <view class="hero-avatar-dot">听</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="stats-panel">
+    <view class="stats-cell">
+      <view class="stats-value stats-primary">{{stats.todayDictationCount}}</view>
+      <view class="stats-label">今日听写</view>
+    </view>
+    <view class="stats-divider"></view>
+    <view class="stats-cell">
+      <view class="stats-value stats-success">{{accuracyText}}</view>
+      <view class="stats-label">今日正确率</view>
+    </view>
+    <view class="stats-divider"></view>
+    <view class="stats-cell">
+      <view class="stats-value stats-info">{{stats.wordCount}}</view>
+      <view class="stats-label">累计词条</view>
+    </view>
+  </view>
+
+  <view class="row-between section-head">
+    <view>
+      <view class="small-title">我的教材</view>
+      <view class="section-subtitle">管理教材并继续听写练习</view>
+    </view>
+  </view>
+
+  <view class="stack">
+    <block wx:if="{{textbooks.length}}">
+      <view wx:for="{{textbooks}}" wx:key="id" class="home-book-card" bindtap="handleOpenTextbook" data-id="{{item.id}}">
+        <view class="home-book-glow"></view>
+        <view class="home-cover" style="background: {{item.coverColor}}18;">
+          <view class="home-cover-icon">书</view>
+        </view>
+        <view class="home-book-main">
+          <view class="home-book-name">{{item.name}}</view>
+          <view class="home-book-meta">{{item.lessonCount}} 课文 · {{item.wordCount}} 词条</view>
+          <view class="home-book-sub">最近练习 {{item.recentText}}</view>
+        </view>
+        <view class="home-book-arrow">›</view>
+      </view>
+    </block>
+
+    <view wx:else class="empty-card home-empty">
+      <view class="home-empty-icon">书</view>
+      <view class="small-title">还没有教材</view>
+      <view class="section-subtitle">可以先去设置页恢复示例数据。</view>
+    </view>
+  </view>
+</view>

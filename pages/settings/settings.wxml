@@ -1,0 +1,75 @@
+﻿<view class="page-shell stack with-bottom-space">
+  <view class="soft-top">
+    <view class="section-title">设置与历史</view>
+    <view class="section-subtitle">管理语音设置、数据和历史听写记录。</view>
+  </view>
+
+  <view class="panel stack">
+    <view class="settings-head">
+      <view class="settings-icon settings-icon-primary">速</view>
+      <view>
+        <view class="small-title">默认语速</view>
+        <view class="section-subtitle">进入听写页时默认使用 {{speechRateLabel}}x</view>
+      </view>
+    </view>
+
+    <view class="slider-row">
+      <view class="slider-label">当前值</view>
+      <view class="slider-value">{{speechRateLabel}}x</view>
+    </view>
+    <slider min="0.5" max="1.5" step="0.1" value="{{settings.defaultSpeechRate}}" bindchange="handleSpeechRateChange" show-value="{{false}}" activeColor="#FF8C69" backgroundColor="#F0F0F0" />
+
+    <view class="settings-head repeat-head">
+      <view class="settings-icon settings-icon-info">次</view>
+      <view>
+        <view class="small-title">默认重复次数</view>
+        <view class="section-subtitle">每个词条默认重复朗读 1 到 3 次</view>
+      </view>
+    </view>
+
+    <view class="repeat-row">
+      <button wx:for="{{repeatOptions}}" wx:key="value" class="{{item.className}} repeat-btn" data-value="{{item.value}}" bindtap="handleRepeatChange">{{item.label}}</button>
+    </view>
+  </view>
+
+  <view class="panel stack">
+    <view class="small-title">数据管理</view>
+    <button class="secondary-btn action-btn" bindtap="handleResetSample">恢复示例数据</button>
+    <button class="secondary-btn action-btn" bindtap="handleClearRecords">清空听写记录</button>
+    <button class="danger-btn action-btn" bindtap="handleClearAll">清空全部数据</button>
+  </view>
+
+  <view class="panel stack">
+    <view class="settings-head">
+      <view class="settings-icon settings-icon-primary">史</view>
+      <view>
+        <view class="small-title">历史记录</view>
+        <view class="section-subtitle">按时间倒序查看最近的听写结果。</view>
+      </view>
+    </view>
+    <block wx:if="{{records.length}}">
+      <view wx:for="{{records}}" wx:key="id" class="history-card">
+        <view class="row-between">
+          <view>
+            <view class="record-title">{{item.lessonName}}</view>
+            <view class="section-subtitle">{{item.textbookName}} · {{item.itemCount}} 个词条</view>
+          </view>
+          <view class="record-pill">{{item.accuracy}}%</view>
+        </view>
+        <view class="record-time">{{item.endTimeLabel}}</view>
+      </view>
+    </block>
+    <view wx:else class="section-subtitle">还没有听写记录，先去完成一次练习吧。</view>
+  </view>
+
+  <view class="panel about-card">
+    <view class="settings-head">
+      <view class="settings-icon settings-icon-primary">宁</view>
+      <view>
+        <view class="small-title">关于宁听</view>
+        <view class="section-subtitle">版本 1.0.0</view>
+      </view>
+    </view>
+    <view class="about-text">宁听是一个面向小学生的本地优先听写工具，教材、词条和记录都保存在当前设备。</view>
+  </view>
+</view>

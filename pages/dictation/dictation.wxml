@@ -1,0 +1,55 @@
+﻿<view class="page-shell stack with-bottom-space">
+  <view class="soft-top">
+    <view class="row-between">
+      <view>
+        <view class="section-title">{{lessonName}}</view>
+        <view class="section-subtitle">第 {{currentIndex + 1}} / {{words.length}} 个</view>
+      </view>
+      <button class="secondary-btn dictation-end-btn" bindtap="handleFinish">结束</button>
+    </view>
+  </view>
+
+  <view class="dictation-progress">
+    <view class="dictation-progress-bar" style="width: {{progressWidth}};"></view>
+  </view>
+
+  <view wx:if="{{words.length}}" class="stack">
+    <view class="dictation-card">
+      <view class="dictation-status">{{statusText}}</view>
+      <view class="dictation-placeholder">请在纸上写出你听到的词条</view>
+      <view class="dictation-symbol">听</view>
+      <view class="section-subtitle">提示：{{currentHint}}</view>
+      <view class="section-subtitle">已播放 {{playCount}} / {{repeatTimes}} 次</view>
+    </view>
+
+    <view class="panel stack">
+      <view class="row-between">
+        <view class="small-title">语速</view>
+        <view class="section-subtitle">{{speechRate}}x</view>
+      </view>
+      <slider min="0.5" max="1.5" step="0.1" value="{{speechRate}}" bindchange="handleSpeechRateChange" show-value="{{false}}" activeColor="#FF8C69" backgroundColor="#F0F0F0" />
+
+      <view class="row-between">
+        <view class="small-title">重复次数</view>
+        <view class="section-subtitle">{{repeatTimes}} 次</view>
+      </view>
+      <view class="repeat-row">
+        <button wx:for="{{repeatOptions}}" wx:key="value" class="{{item.className}}" bindtap="handleRepeatChange" data-value="{{item.value}}">{{item.label}}</button>
+      </view>
+    </view>
+
+    <view class="dictation-controls">
+      <button class="secondary-btn control-btn" bindtap="handlePrev" disabled="{{currentIndex === 0}}">上一项</button>
+      <button wx:if="{{isPlaying}}" class="primary-btn control-btn control-main" bindtap="handlePause">暂停</button>
+      <button wx:else class="primary-btn control-btn control-main" bindtap="handleReplay">{{actionButtonText}}</button>
+      <button class="secondary-btn control-btn" bindtap="handleNext" disabled="{{currentIndex >= words.length - 1}}">下一项</button>
+    </view>
+
+    <button class="ghost-btn dictation-submit" bindtap="handleFinish">结束听写并进入批改</button>
+  </view>
+
+  <view wx:else class="empty-card">
+    <view class="section-title">没有可用词条</view>
+    <view class="section-subtitle">请先在教材中准备词条数据。</view>
+  </view>
+</view>

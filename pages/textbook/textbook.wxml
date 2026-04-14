@@ -1,0 +1,35 @@
+<view class="page-shell stack">
+  <view wx:if="{{textbook}}" class="hero-card">
+    <view class="section-title">{{textbook.name}}</view>
+    <view class="section-subtitle">{{textbook.grade}} 年级 · {{termLabel}}</view>
+  </view>
+
+  <block wx:if="{{lessons.length}}">
+    <view wx:for="{{lessons}}" wx:key="id" class="panel stack">
+      <view class="row-between">
+        <view>
+          <view class="lesson-name">{{item.name}}</view>
+          <view class="section-subtitle">{{item.wordCount}} 个词条</view>
+        </view>
+        <navigator
+          class="primary-link"
+          url="/pages/dictation/dictation?lessonId={{item.id}}&textbookId={{textbook.id}}"
+        >
+          开始听写
+        </navigator>
+      </view>
+
+      <view class="word-grid">
+        <view wx:for="{{item.words}}" wx:key="id" class="word-chip">
+          <view class="word-content">{{item.content}}</view>
+          <view class="word-hint">{{item.pronunciation || item.hint || item.type}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view wx:else class="empty-card">
+    <view class="section-title">当前教材还没有课文</view>
+    <view class="section-subtitle">后续可继续补充新增、编辑、导入功能。</view>
+  </view>
+</view>

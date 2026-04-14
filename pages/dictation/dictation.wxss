@@ -1,0 +1,79 @@
+﻿.dictation-end-btn {
+  padding: 16rpx 22rpx;
+  font-size: 24rpx;
+}
+
+.dictation-progress {
+  height: 16rpx;
+  overflow: hidden;
+  border-radius: 999rpx;
+  background: #ffffff;
+  box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.05);
+}
+
+.dictation-progress-bar {
+  height: 100%;
+  border-radius: 999rpx;
+  background: #ff8c69;
+}
+
+.dictation-card {
+  padding: 52rpx 32rpx;
+  border-radius: 40rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 28rpx rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.dictation-status {
+  color: #8e8e93;
+  font-size: 24rpx;
+}
+
+.dictation-placeholder {
+  margin-top: 24rpx;
+  color: #2d2d2d;
+  font-size: 44rpx;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.dictation-symbol {
+  width: 144rpx;
+  height: 144rpx;
+  margin: 28rpx auto 24rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 140, 105, 0.14), rgba(255, 178, 153, 0.22));
+  color: #ff8c69;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54rpx;
+  font-weight: 700;
+}
+
+.repeat-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.repeat-btn {
+  flex: 1;
+}
+
+.dictation-controls {
+  display: flex;
+  gap: 16rpx;
+}
+
+.control-btn {
+  flex: 1;
+}
+
+.control-main {
+  box-shadow: 0 10rpx 26rpx rgba(255, 140, 105, 0.3);
+}
+
+.dictation-submit {
+  width: 100%;
+}

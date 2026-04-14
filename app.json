@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/dictation-setup/dictation-setup",
+    "pages/index/index",
+    "pages/textbook/textbook",
+    "pages/dictation/dictation",
+    "pages/grading/grading",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarTitleText": "宁听",
+    "navigationBarBackgroundColor": "#FFF7EF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F4EE",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.6",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#7C6B5D",
+    "selectedColor": "#C96F3B",
+    "backgroundColor": "#FFFDF9",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/dictation-setup/dictation-setup",
+        "text": "听写"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "教材"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置"
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+.settings-head {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+}
+
+.settings-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.settings-icon-primary {
+  background: rgba(255, 140, 105, 0.14);
+  color: #ff8c69;
+}
+
+.settings-icon-info {
+  background: rgba(107, 163, 224, 0.14);
+  color: #6ba3e0;
+}
+
+.repeat-head {
+  margin-top: 8rpx;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-label {
+  color: #8e8e93;
+  font-size: 24rpx;
+}
+
+.slider-value {
+  color: #2d2d2d;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.repeat-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.repeat-btn {
+  flex: 1;
+}
+
+.action-btn {
+  width: 100%;
+  text-align: left;
+}
+
+.history-card {
+  padding: 22rpx 24rpx;
+  border-radius: 24rpx;
+  background: #fafafa;
+}
+
+.record-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
+.record-pill {
+  min-width: 112rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 140, 105, 0.12);
+  color: #ff8c69;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.record-time {
+  margin-top: 12rpx;
+  color: #8e8e93;
+  font-size: 22rpx;
+}
+
+.about-card {
+  gap: 16rpx;
+}
+
+.about-text {
+  margin-top: 16rpx;
+  color: #8e8e93;
+  font-size: 24rpx;
+  line-height: 1.8;
+}

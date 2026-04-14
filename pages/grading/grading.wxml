@@ -1,0 +1,48 @@
+﻿<view class="page-shell stack with-bottom-space">
+  <view class="soft-top">
+    <view class="section-title">批改</view>
+    <view class="section-subtitle">{{textbookName}} · {{lessonName}}</view>
+  </view>
+
+  <view class="panel stack">
+    <view class="row-between">
+      <view class="small-title">拍照对照</view>
+      <button wx:if="{{photoUrl}}" class="secondary-btn grading-mini-btn" bindtap="handleClearPhoto">重拍</button>
+    </view>
+
+    <image wx:if="{{photoUrl}}" class="grading-photo" src="{{photoUrl}}" mode="widthFix"></image>
+    <button wx:else class="photo-picker" bindtap="handleChoosePhoto">
+      <view class="photo-picker-icon">拍</view>
+      <view class="small-title">点击拍照或选择照片</view>
+      <view class="section-subtitle">照片只保存在当前设备，不会上传。</view>
+    </button>
+  </view>
+
+  <view class="panel stack">
+    <view class="row-between">
+      <view class="small-title">批改列表</view>
+      <button class="secondary-btn grading-mini-btn" bindtap="handleMarkAllCorrect">一键全对</button>
+    </view>
+
+    <view class="stack">
+      <view wx:for="{{words}}" wx:key="id" class="grading-item">
+        <view class="row-between grading-item-top">
+          <view>
+            <view class="grading-index">{{index + 1}}.</view>
+            <view class="grading-word">{{item.content}}</view>
+            <view wx:if="{{item.pronunciation}}" class="section-subtitle">{{item.pronunciation}}</view>
+          </view>
+          <view class="grading-actions">
+            <button class="{{results[item.id] === true ? 'grading-mark grading-mark-correct active' : 'grading-mark grading-mark-correct'}}" bindtap="handleMark" data-id="{{item.id}}" data-correct="{{true}}">对</button>
+            <button class="{{results[item.id] === false ? 'grading-mark grading-mark-wrong active' : 'grading-mark grading-mark-wrong'}}" bindtap="handleMark" data-id="{{item.id}}" data-correct="{{false}}">错</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="grading-footer">
+    <view class="grading-score">正确率<text class="grading-score-value">{{accuracy}}%</text>（{{correctCount}}/{{words.length}}）</view>
+    <button class="primary-btn grading-submit" bindtap="handleSubmit">完成批改</button>
+  </view>
+</view>

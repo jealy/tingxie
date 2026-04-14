@@ -1,0 +1,37 @@
+.lesson-name {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #2f241d;
+  margin-bottom: 8rpx;
+}
+
+.primary-link {
+  color: #c96f3b;
+  font-weight: 700;
+  font-size: 26rpx;
+}
+
+.word-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+}
+
+.word-chip {
+  min-width: 140rpx;
+  background: #f8f1e7;
+  border-radius: 20rpx;
+  padding: 16rpx 18rpx;
+}
+
+.word-content {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #2f241d;
+}
+
+.word-hint {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: #8f7f72;
+}

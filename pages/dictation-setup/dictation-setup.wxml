@@ -1,0 +1,58 @@
+﻿<view class="page-shell stack with-bottom-space">
+  <view class="soft-top">
+    <view class="row" style="gap: 20rpx;">
+      <view class="icon-badge">听</view>
+      <view>
+        <view class="section-title">开始听写</view>
+        <view class="section-subtitle">选择一种方式，开始今天的听写练习</view>
+      </view>
+    </view>
+  </view>
+
+  <button class="setup-card free-card" hover-class="card-hover" bindtap="handleStart">
+    <view class="setup-glow setup-glow-primary"></view>
+    <view class="setup-icon setup-icon-primary">写</view>
+    <view class="setup-main">
+      <view class="setup-title-row">
+        <view class="small-title">选课听写</view>
+        <view class="setup-tag">推荐</view>
+      </view>
+      <view class="section-subtitle">从教材和课文中选择，系统按顺序完成听写流程</view>
+    </view>
+    <view class="setup-arrow">›</view>
+  </button>
+
+  <view class="panel stack">
+    <view>
+      <view class="picker-label">教材</view>
+      <picker mode="selector" range="{{textbookOptions}}" range-key="name" value="{{textbookIndex}}" bindchange="handleTextbookChange">
+        <view class="picker-box">
+          <view class="picker-value">{{textbookName}}</view>
+          <view class="picker-arrow">⌄</view>
+        </view>
+      </picker>
+    </view>
+
+    <view>
+      <view class="picker-label">课文</view>
+      <picker mode="selector" range="{{lessonOptions}}" range-key="name" value="{{lessonIndex}}" bindchange="handleLessonChange">
+        <view class="picker-box">
+          <view class="picker-value">{{lessonName}}</view>
+          <view class="picker-arrow">⌄</view>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="hint-card">
+    <view class="hint-icon">♪</view>
+    <view class="hint-main">
+      <view class="hint-title">小提示</view>
+      <view class="section-subtitle">听写过程中可以调节语速和重复次数，也可以随时重新开始。</view>
+    </view>
+  </view>
+
+  <view class="bottom-action">
+    <button class="primary-btn bottom-primary" bindtap="handleStart">开始本次听写</button>
+  </view>
+</view>

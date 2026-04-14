@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'PingFang SC', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAFAFA;
+    color: #2D2D2D;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-card shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-shadow duration-300 hover:shadow-card-hover;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white rounded-btn py-3 px-6 shadow-btn-primary font-medium;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-primary rounded-btn py-3 px-6 border border-primary;
+  }
+}
+
+@layer utilities {
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
